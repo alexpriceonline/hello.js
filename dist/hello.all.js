@@ -4179,8 +4179,8 @@ if (typeof chrome === 'object' && typeof chrome.identity === 'object' && chrome.
 	}
 
 	function formatPerson(o) {
-		o.name = o.displayName || o.name;
-		o.picture = o.picture || (o.image ? o.image.url : null);
+		o.fullName = o.displayName || o.name;
+		o.pictureUrl = o.picture || (o.image ? o.image.url : null);
 		o.thumbnail = o.picture;
 	}
 
