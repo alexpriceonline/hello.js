@@ -31,7 +31,7 @@
 			base: 'https://api.linkedin.com/v1/',
 
 			get: {
-				me: 'people/~:(picture-url,first-name,last-name,id,formatted-name,email-address)',
+				me: 'people/~:(picture-url,picture-urls::(original),first-name,last-name,id,formatted-name,email-address)',
 
 				// See: http://developer.linkedin.com/documents/get-network-updates-and-statistics-api
 				'me/share': 'people/~/network/updates?count=@{limit|250}'
@@ -147,6 +147,8 @@
 		if (o.error) {
 			return;
 		}
+
+		console.log('formatUser:', o);
 
 		o.first_name = o.firstName;
 		o.last_name = o.lastName;
