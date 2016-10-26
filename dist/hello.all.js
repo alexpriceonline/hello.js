@@ -4182,6 +4182,7 @@ if (typeof chrome === 'object' && typeof chrome.identity === 'object' && chrome.
 		o.fullName = o.displayName || o.name;
 		o.pictureUrl = o.picture || (o.image ? o.image.url : null);
 		o.thumbnail = o.picture;
+		console.log(o);
 	}
 
 	function formatFriends(o, headers, req) {
