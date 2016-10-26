@@ -4179,9 +4179,12 @@ if (typeof chrome === 'object' && typeof chrome.identity === 'object' && chrome.
 	}
 
 	function formatPerson(o) {
-		o.formattedName = o.displayName || o.name;
+
 		// + '0' makes the image actually a decent size
-		o.pictureUrl = o.picture + '0' || (o.image ? o.image.url + '0' : null);
+		var pictureUrl = o.picture || (o.image && o.image.url);
+		o.pictureUrl = pictureUrl ? pictureUrl + '0' : null;
+
+		o.formattedName = o.displayName || o.name;
 	}
 
 	function formatFriends(o, headers, req) {
