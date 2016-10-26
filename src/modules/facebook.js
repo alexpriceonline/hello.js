@@ -151,7 +151,10 @@
 	function formatUser(o) {
 		if (o.id) {
 			o.thumbnail = o.picture = 'https://graph.facebook.com/' + o.id + '/picture';
+			o.pictureUrl = 'https://graph.facebook.com/' + o.id + '/picture?width=500';
 		}
+
+		o.formattedName = o.name;
 
 		return o;
 	}
