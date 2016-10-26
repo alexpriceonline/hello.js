@@ -5015,12 +5015,19 @@ if (typeof chrome === 'object' && typeof chrome.identity === 'object' && chrome.
 			return;
 		}
 
-		console.log('formatUser:', o);
+		// The original picture is in an array in an object.
+		// This is a safety precaution
+		var originalPicture = (
+			o.pictureUrls &&
+			o.pictureUrls.values &&
+			o.pictureUrls.values[0]
+		);
 
 		o.first_name = o.firstName;
 		o.last_name = o.lastName;
 		o.name = o.formattedName || (o.first_name + ' ' + o.last_name);
 		o.thumbnail = o.pictureUrl;
+		o.pictureUrl = originalPicture || o.pictureUrl;
 		o.email = o.emailAddress;
 		return o;
 	}
