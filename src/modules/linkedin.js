@@ -148,6 +148,8 @@
 			return;
 		}
 
+		console.log(o);
+
 		// The original picture is in an array in an object.
 		// This is a safety precaution
 		var originalPicture = (
