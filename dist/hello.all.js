@@ -1,4 +1,4 @@
-/*! hellojs v1.14.2 | (c) 2012-2016 Andrew Dodson | MIT https://adodson.com/hello.js/LICENSE */
+/*! hellojs v1.14.3 | (c) 2012-2016 Andrew Dodson | MIT https://adodson.com/hello.js/LICENSE */
 // ES5 Object.create
 if (!Object.create) {
 
@@ -5017,8 +5017,6 @@ if (typeof chrome === 'object' && typeof chrome.identity === 'object' && chrome.
 	}
 
 	function formatUser(o) {
-		console.log(o);
-
 		if (o.error) {
 			return;
 		}

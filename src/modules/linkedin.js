@@ -144,8 +144,6 @@
 	}
 
 	function formatUser(o) {
-		console.log(o);
-
 		if (o.error) {
 			return;
 		}
