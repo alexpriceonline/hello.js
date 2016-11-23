@@ -31,7 +31,7 @@
 			base: 'https://api.linkedin.com/v1/',
 
 			get: {
-				me: 'people/~:(picture-url,picture-urls::(original),first-name,last-name,id,formatted-name,email-address)',
+				me: 'people/~:(public-profile-url,picture-url,picture-urls::(original),first-name,last-name,id,formatted-name,email-address)',
 
 				// See: http://developer.linkedin.com/documents/get-network-updates-and-statistics-api
 				'me/share': 'people/~/network/updates?count=@{limit|250}'
@@ -144,11 +144,11 @@
 	}
 
 	function formatUser(o) {
+		console.log(o);
+
 		if (o.error) {
 			return;
 		}
-
-		console.log(o);
 
 		// The original picture is in an array in an object.
 		// This is a safety precaution
