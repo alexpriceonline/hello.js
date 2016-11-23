@@ -1,4 +1,4 @@
-/*! hellojs v1.14.1 | (c) 2012-2016 Andrew Dodson | MIT https://adodson.com/hello.js/LICENSE */
+/*! hellojs v1.14.2 | (c) 2012-2016 Andrew Dodson | MIT https://adodson.com/hello.js/LICENSE */
 // ES5 Object.create
 if (!Object.create) {
 
@@ -4904,7 +4904,7 @@ if (typeof chrome === 'object' && typeof chrome.identity === 'object' && chrome.
 			base: 'https://api.linkedin.com/v1/',
 
 			get: {
-				me: 'people/~:(picture-url,picture-urls::(original),first-name,last-name,id,formatted-name,email-address)',
+				me: 'people/~:(public-profile-url,picture-url,picture-urls::(original),first-name,last-name,id,formatted-name,email-address)',
 
 				// See: http://developer.linkedin.com/documents/get-network-updates-and-statistics-api
 				'me/share': 'people/~/network/updates?count=@{limit|250}'
@@ -5017,6 +5017,8 @@ if (typeof chrome === 'object' && typeof chrome.identity === 'object' && chrome.
 	}
 
 	function formatUser(o) {
+		console.log(o);
+
 		if (o.error) {
 			return;
 		}
